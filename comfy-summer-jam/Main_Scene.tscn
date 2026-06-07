@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cb0pfmr3rxqy7" path="res://Sprites/IMG_018asdadsada2-export.png" id="1_tkmsp"]
 [ext_resource type="Texture2D" uid="uid://jh2dwsylpymc" path="res://Sprites/IMG_0183.png" id="2_5yw3w"]
-[ext_resource type="Script" uid="uid://d2v5qvb47nbfk" path="res://ocean.gd" id="3_qtktj"]
+[ext_resource type="Script" uid="uid://d2v5qvb47nbfk" path="res://Scripts/ocean.gd" id="3_qtktj"]
 
 [node name="Main background" type="Node2D" unique_id=11799508]
 
