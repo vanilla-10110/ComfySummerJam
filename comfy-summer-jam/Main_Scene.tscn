@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bd866pdx06h1o"]
 
-[ext_resource type="Texture2D" uid="uid://cb0pfmr3rxqy7" path="res://Sprites/IMG_018asdadsada2-export.png" id="1_tkmsp"]
-[ext_resource type="Texture2D" uid="uid://jh2dwsylpymc" path="res://Sprites/IMG_0183.png" id="2_5yw3w"]
+[ext_resource type="Texture2D" uid="uid://cb0pfmr3rxqy7" path="res://Sprites/Beach.png" id="1_tkmsp"]
+[ext_resource type="Texture2D" uid="uid://jh2dwsylpymc" path="res://Sprites/Ocean.png" id="2_5yw3w"]
 [ext_resource type="Script" uid="uid://d2v5qvb47nbfk" path="res://Scripts/ocean.gd" id="3_qtktj"]
+[ext_resource type="Script" uid="uid://c0rpxfs8be7mb" path="res://grid.gd" id="4_5yw3w"]
 
 [node name="Main background" type="Node2D" unique_id=11799508]
 
@@ -20,3 +21,6 @@ position = Vector2(838.75, 541)
 scale = Vector2(1.1236979, 1)
 texture = ExtResource("2_5yw3w")
 script = ExtResource("3_qtktj")
+
+[node name="Grid" type="Node2D" parent="." unique_id=1992387374]
+script = ExtResource("4_5yw3w")
