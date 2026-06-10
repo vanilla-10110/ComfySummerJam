@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cb0pfmr3rxqy7" path="res://Sprites/Beach.png" id="1_tkmsp"]
 [ext_resource type="Texture2D" uid="uid://jh2dwsylpymc" path="res://Sprites/Ocean.png" id="2_5yw3w"]
 [ext_resource type="Script" uid="uid://d2v5qvb47nbfk" path="res://Scripts/ocean.gd" id="3_qtktj"]
-[ext_resource type="Script" uid="uid://c0rpxfs8be7mb" path="res://grid.gd" id="4_5yw3w"]
+[ext_resource type="Script" uid="uid://clmmgvrti8wny" path="res://Grid.cs" id="4_4ityq"]
 [ext_resource type="Texture2D" uid="uid://o77hcnlyj0tr" path="res://Sprites/Grid.png" id="5_qtktj"]
 [ext_resource type="Texture2D" uid="uid://da8jwlmrda1oo" path="res://Sprites/Sprite-0002.png" id="6_lhke2"]
 [ext_resource type="Texture2D" uid="uid://n5ahsf28adnh" path="res://Sprites/tile_border.png" id="7_lhke2"]
@@ -43,7 +43,7 @@ texture = ExtResource("2_5yw3w")
 script = ExtResource("3_qtktj")
 
 [node name="Grid" type="Node2D" parent="." unique_id=1992387374]
-script = ExtResource("4_5yw3w")
+script = ExtResource("4_4ityq")
 
 [node name="Grid2" type="Sprite2D" parent="Grid" unique_id=319115800]
 visible = false
