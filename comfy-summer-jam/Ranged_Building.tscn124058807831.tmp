@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cc7gax6778vvc"]
+
+[ext_resource type="Texture2D" uid="uid://cy7mlrbv6qb7o" path="res://Sprites/gun_placeholder.png" id="1_60y6h"]
+[ext_resource type="Script" uid="uid://dtxwsvcoo3blf" path="res://ranged_building.gd" id="1_l0kfc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0kfc"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tcjby"]
+size = Vector2(999, 128)
+
+[node name="Node2D" type="Node2D" unique_id=1051142709]
+script = ExtResource("1_l0kfc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1218543742]
+texture = ExtResource("1_60y6h")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1202575512]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1687847300]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_l0kfc")
+
+[node name="Attack box" type="Area2D" parent="." unique_id=1265908053]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack box" unique_id=660501915]
+position = Vector2(546.5, -1)
+shape = SubResource("RectangleShape2D_tcjby")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=797541864]
+target_position = Vector2(1045, -1)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Timer" type="Timer" parent="RayCast2D" unique_id=1634501897]

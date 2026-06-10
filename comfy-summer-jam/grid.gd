@@ -47,4 +47,6 @@ func _process(delta: float) -> void:
 	var working_tile = get_global_mouse_position()
 	if select_mode and working_space.has(snap_pos(get_global_mouse_position())):
 		preview_tile = snap_pos(get_global_mouse_position())
-	
+	else:
+		preview.erase_cell(preview_tile)
+		
