@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://ch47osfoapb6n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uchyk"]
+bg_color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6133902, 0.6133903, 0.61339, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uchyk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uchyk"]
+font_size = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0fbet"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62e2m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtu10"]
+bg_color = Color(2.117753e-06, 0.5627192, 0.8621271, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.19793722, 0.19793725, 0.19793713, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+anti_aliasing = false
+
+[node name="Control" type="Control" unique_id=51614253]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1158945224]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.13682574, 0.13682574, 0.13682568, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=981834751]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.0
+offset_top = -79.5
+offset_right = 186.0
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.0037214)
+theme_override_styles/panel = SubResource("StyleBoxFlat_uchyk")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=650348371]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1592547104]
+layout_mode = 2
+
+[node name="TitleVBox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1745438933]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TitleVBox" unique_id=1764348405]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Give it some sample text"
+
+[node name="Subtitle" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/TitleVBox" unique_id=2105975297]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.5251013, 0.5251013, 0.5251013, 1)
+theme_override_font_sizes/font_size = 7
+text = "Subtitle Text"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1079303591]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uchyk")
+
+[node name="MetricVbox" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1925100745]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="MetricHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox" unique_id=1971908927]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox/MetricHBox" unique_id=818177365]
+layout_mode = 2
+text = "Metric 1"
+label_settings = SubResource("LabelSettings_uchyk")
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox/MetricHBox" unique_id=547830063]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0fbet")
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox/MetricHBox" unique_id=353574712]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_62e2m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qtu10")
+value = 98.3
+fill_mode = 1
+show_percentage = false
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox/MetricHBox" unique_id=1357073776]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "98.3%"
+label_settings = SubResource("LabelSettings_uchyk")
+horizontal_alignment = 2
+
+[node name="MetricHBox2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox" unique_id=544782472]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox/MetricHBox2" unique_id=916845471]
+layout_mode = 2
+text = "Metric 2"
+label_settings = SubResource("LabelSettings_uchyk")
+
+[node name="VSeparator" type="VSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox/MetricHBox2" unique_id=1128804412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0fbet")
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox/MetricHBox2" unique_id=1733205390]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxEmpty_62e2m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qtu10")
+value = 3.3
+fill_mode = 1
+show_percentage = false
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MetricVbox/MetricHBox2" unique_id=862578467]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+text = "3.3%"
+label_settings = SubResource("LabelSettings_uchyk")
+horizontal_alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=656057028]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxEmpty_uchyk")
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1662836580]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_ee4bf")
+text = "See more"
