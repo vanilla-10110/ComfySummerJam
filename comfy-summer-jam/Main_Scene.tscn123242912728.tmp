@@ -1,0 +1,77 @@
+[gd_scene format=4 uid="uid://bd866pdx06h1o"]
+
+[ext_resource type="Texture2D" uid="uid://cb0pfmr3rxqy7" path="res://Sprites/Beach.png" id="1_tkmsp"]
+[ext_resource type="Texture2D" uid="uid://jh2dwsylpymc" path="res://Sprites/Ocean.png" id="2_5yw3w"]
+[ext_resource type="Script" uid="uid://d2v5qvb47nbfk" path="res://Scripts/ocean.gd" id="3_qtktj"]
+[ext_resource type="Script" uid="uid://c0rpxfs8be7mb" path="res://grid.gd" id="4_5yw3w"]
+[ext_resource type="Texture2D" uid="uid://o77hcnlyj0tr" path="res://Sprites/Grid.png" id="5_qtktj"]
+[ext_resource type="Texture2D" uid="uid://da8jwlmrda1oo" path="res://Sprites/Sprite-0002.png" id="6_lhke2"]
+[ext_resource type="Texture2D" uid="uid://n5ahsf28adnh" path="res://Sprites/tile_border.png" id="7_lhke2"]
+[ext_resource type="PackedScene" uid="uid://cc7gax6778vvc" path="res://Ranged_Building.tscn" id="8_4ityq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ityq"]
+texture = ExtResource("6_lhke2")
+texture_region_size = Vector2i(145, 145)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wqxms"]
+texture = ExtResource("7_lhke2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3qyon"]
+tile_size = Vector2i(145, 145)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_wqxms")
+sources/0 = SubResource("TileSetAtlasSource_4ityq")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wqxms"]
+radius = 52.153618
+
+[node name="Main background" type="Node2D" unique_id=11799508]
+
+[node name="Behind Castle beach" type="Sprite2D" parent="." unique_id=1029324118]
+position = Vector2(-302, 540)
+texture = ExtResource("1_tkmsp")
+flip_v = true
+
+[node name="Main Beach" type="Sprite2D" parent="." unique_id=29543412]
+position = Vector2(960, 540)
+texture = ExtResource("1_tkmsp")
+
+[node name="Ocean" type="Sprite2D" parent="." unique_id=1906037907]
+position = Vector2(838.75, 541)
+scale = Vector2(1.1236979, 1)
+texture = ExtResource("2_5yw3w")
+script = ExtResource("3_qtktj")
+
+[node name="Grid" type="Node2D" parent="." unique_id=1992387374]
+script = ExtResource("4_5yw3w")
+
+[node name="Grid2" type="Sprite2D" parent="Grid" unique_id=319115800]
+visible = false
+position = Vector2(918, 593)
+scale = Vector2(0.865, 0.885)
+texture = ExtResource("5_qtktj")
+
+[node name="ground" type="TileMapLayer" parent="Grid" unique_id=455596519]
+position = Vector2(261, 252)
+tile_set = SubResource("TileSet_3qyon")
+rendering_quadrant_size = 128
+physics_quadrant_size = 128
+
+[node name="preview" type="TileMapLayer" parent="Grid" unique_id=259299044]
+position = Vector2(261, 252)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAHAAAAAQAAAAAAAAAAAAQAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_3qyon")
+rendering_quadrant_size = 128
+physics_quadrant_size = 128
+
+[node name="Node2D" parent="." unique_id=1051142709 instance=ExtResource("8_4ityq")]
+position = Vector2(340, 907)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=741219947]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1753882489]
+position = Vector2(1207, 904)
+shape = SubResource("CircleShape2D_wqxms")

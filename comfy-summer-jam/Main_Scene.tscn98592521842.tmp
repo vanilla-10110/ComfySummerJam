@@ -1,0 +1,336 @@
+[gd_scene format=4 uid="uid://bd866pdx06h1o"]
+
+[ext_resource type="Texture2D" uid="uid://cb0pfmr3rxqy7" path="res://Sprites/Beach.png" id="1_tkmsp"]
+[ext_resource type="Texture2D" uid="uid://jh2dwsylpymc" path="res://Sprites/Ocean.png" id="2_5yw3w"]
+[ext_resource type="Script" uid="uid://d2v5qvb47nbfk" path="res://Scripts/ocean.gd" id="3_qtktj"]
+[ext_resource type="Script" uid="uid://c0rpxfs8be7mb" path="res://grid.gd" id="4_5yw3w"]
+[ext_resource type="Texture2D" uid="uid://o77hcnlyj0tr" path="res://Sprites/Grid.png" id="5_qtktj"]
+[ext_resource type="Texture2D" uid="uid://oijficdsk3qy" path="res://Sprites/Tile.png" id="6_654x7"]
+[ext_resource type="Texture2D" uid="uid://n5ahsf28adnh" path="res://Sprites/tile_border.png" id="7_lhke2"]
+[ext_resource type="Script" uid="uid://bk563uusd73d3" path="res://tile_map_layer.gd" id="8_4ityq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ityq"]
+texture = ExtResource("6_654x7")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wqxms"]
+texture = ExtResource("7_lhke2")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3qyon"]
+tile_size = Vector2i(145, 145)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4ityq")
+sources/1 = SubResource("TileSetAtlasSource_wqxms")
+
+[node name="Main background" type="Node2D" unique_id=11799508]
+
+[node name="Behind Castle beach" type="Sprite2D" parent="." unique_id=1029324118]
+position = Vector2(-302, 540)
+texture = ExtResource("1_tkmsp")
+flip_v = true
+
+[node name="Main Beach" type="Sprite2D" parent="." unique_id=29543412]
+position = Vector2(960, 540)
+texture = ExtResource("1_tkmsp")
+
+[node name="Ocean" type="Sprite2D" parent="." unique_id=1906037907]
+position = Vector2(838.75, 541)
+scale = Vector2(1.1236979, 1)
+texture = ExtResource("2_5yw3w")
+script = ExtResource("3_qtktj")
+
+[node name="Grid" type="Node2D" parent="." unique_id=1992387374]
+script = ExtResource("4_5yw3w")
+
+[node name="Grid2" type="Sprite2D" parent="Grid" unique_id=319115800]
+visible = false
+position = Vector2(918, 593)
+scale = Vector2(0.865, 0.885)
+texture = ExtResource("5_qtktj")
+
+[node name="Collum1" type="Node2D" parent="Grid" unique_id=1392515957]
+visible = false
+
+[node name="row1" type="Area2D" parent="Grid/Collum1" unique_id=993544786]
+
+[node name="row" type="CollisionPolygon2D" parent="Grid/Collum1/row1" unique_id=516324471]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row2" type="Area2D" parent="Grid/Collum1" unique_id=1098834250]
+
+[node name="row2" type="CollisionPolygon2D" parent="Grid/Collum1/row2" unique_id=9798419]
+position = Vector2(397, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row3" type="Area2D" parent="Grid/Collum1" unique_id=986444368]
+
+[node name="row3" type="CollisionPolygon2D" parent="Grid/Collum1/row3" unique_id=863848563]
+position = Vector2(539, 256)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row4" type="Area2D" parent="Grid/Collum1" unique_id=1503728152]
+
+[node name="row4" type="CollisionPolygon2D" parent="Grid/Collum1/row4" unique_id=900334914]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(423, 2, 563, 3, 568, 142, 428, 142)
+
+[node name="row5" type="Area2D" parent="Grid/Collum1" unique_id=527905696]
+
+[node name="row5" type="CollisionPolygon2D" parent="Grid/Collum1/row5" unique_id=1778374587]
+position = Vector2(819, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row6" type="Area2D" parent="Grid/Collum1" unique_id=874804296]
+
+[node name="row6" type="CollisionPolygon2D" parent="Grid/Collum1/row6" unique_id=1646547582]
+position = Vector2(959, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row7" type="Area2D" parent="Grid/Collum1" unique_id=1555154498]
+
+[node name="row7" type="CollisionPolygon2D" parent="Grid/Collum1/row7" unique_id=81222980]
+position = Vector2(1097, 257)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row8" type="Area2D" parent="Grid/Collum1" unique_id=914220464]
+
+[node name="row8" type="CollisionPolygon2D" parent="Grid/Collum1/row8" unique_id=726776596]
+position = Vector2(1238, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="Collum2" type="Node2D" parent="Grid" unique_id=1585234822]
+visible = false
+position = Vector2(10, 142)
+
+[node name="row1" type="Area2D" parent="Grid/Collum2" unique_id=1219178246]
+
+[node name="row" type="CollisionPolygon2D" parent="Grid/Collum2/row1" unique_id=1458334466]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row2" type="Area2D" parent="Grid/Collum2" unique_id=1376568448]
+
+[node name="row2" type="CollisionPolygon2D" parent="Grid/Collum2/row2" unique_id=155459211]
+position = Vector2(397, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row3" type="Area2D" parent="Grid/Collum2" unique_id=1162944303]
+
+[node name="row3" type="CollisionPolygon2D" parent="Grid/Collum2/row3" unique_id=1452285443]
+position = Vector2(539, 256)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row4" type="Area2D" parent="Grid/Collum2" unique_id=249351512]
+
+[node name="row4" type="CollisionPolygon2D" parent="Grid/Collum2/row4" unique_id=568053567]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(423, 2, 563, 3, 568, 142, 428, 142)
+
+[node name="row5" type="Area2D" parent="Grid/Collum2" unique_id=866337602]
+
+[node name="row5" type="CollisionPolygon2D" parent="Grid/Collum2/row5" unique_id=1567800619]
+position = Vector2(819, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row6" type="Area2D" parent="Grid/Collum2" unique_id=959915229]
+
+[node name="row6" type="CollisionPolygon2D" parent="Grid/Collum2/row6" unique_id=1539382241]
+position = Vector2(959, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row7" type="Area2D" parent="Grid/Collum2" unique_id=1214564438]
+
+[node name="row7" type="CollisionPolygon2D" parent="Grid/Collum2/row7" unique_id=2059724009]
+position = Vector2(1097, 257)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row8" type="Area2D" parent="Grid/Collum2" unique_id=2061618876]
+
+[node name="row8" type="CollisionPolygon2D" parent="Grid/Collum2/row8" unique_id=822550404]
+position = Vector2(1238, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="Collum3" type="Node2D" parent="Grid" unique_id=1885656036]
+visible = false
+position = Vector2(15, 282)
+
+[node name="row1" type="Area2D" parent="Grid/Collum3" unique_id=387629479]
+
+[node name="row" type="CollisionPolygon2D" parent="Grid/Collum3/row1" unique_id=1131347547]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row2" type="Area2D" parent="Grid/Collum3" unique_id=1214825850]
+
+[node name="row2" type="CollisionPolygon2D" parent="Grid/Collum3/row2" unique_id=1962469373]
+position = Vector2(397, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row3" type="Area2D" parent="Grid/Collum3" unique_id=682455357]
+
+[node name="row3" type="CollisionPolygon2D" parent="Grid/Collum3/row3" unique_id=2076812538]
+position = Vector2(539, 256)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row4" type="Area2D" parent="Grid/Collum3" unique_id=519011973]
+
+[node name="row4" type="CollisionPolygon2D" parent="Grid/Collum3/row4" unique_id=2098735927]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(423, 2, 563, 3, 568, 142, 428, 142)
+
+[node name="row5" type="Area2D" parent="Grid/Collum3" unique_id=5442850]
+
+[node name="row5" type="CollisionPolygon2D" parent="Grid/Collum3/row5" unique_id=1164973964]
+position = Vector2(819, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row6" type="Area2D" parent="Grid/Collum3" unique_id=1529994212]
+
+[node name="row6" type="CollisionPolygon2D" parent="Grid/Collum3/row6" unique_id=116103977]
+position = Vector2(959, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row7" type="Area2D" parent="Grid/Collum3" unique_id=1720313901]
+
+[node name="row7" type="CollisionPolygon2D" parent="Grid/Collum3/row7" unique_id=216227985]
+position = Vector2(1097, 257)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row8" type="Area2D" parent="Grid/Collum3" unique_id=1278569491]
+
+[node name="row8" type="CollisionPolygon2D" parent="Grid/Collum3/row8" unique_id=496337450]
+position = Vector2(1238, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="Collum4" type="Node2D" parent="Grid" unique_id=1465822976]
+visible = false
+position = Vector2(21, 422)
+
+[node name="row1" type="Area2D" parent="Grid/Collum4" unique_id=22013338]
+
+[node name="row" type="CollisionPolygon2D" parent="Grid/Collum4/row1" unique_id=2116477072]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row2" type="Area2D" parent="Grid/Collum4" unique_id=1850498975]
+
+[node name="row2" type="CollisionPolygon2D" parent="Grid/Collum4/row2" unique_id=1638087588]
+position = Vector2(397, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row3" type="Area2D" parent="Grid/Collum4" unique_id=1683216856]
+
+[node name="row3" type="CollisionPolygon2D" parent="Grid/Collum4/row3" unique_id=137837797]
+position = Vector2(539, 256)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row4" type="Area2D" parent="Grid/Collum4" unique_id=297050873]
+
+[node name="row4" type="CollisionPolygon2D" parent="Grid/Collum4/row4" unique_id=970412872]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(423, 2, 563, 3, 568, 142, 428, 142)
+
+[node name="row5" type="Area2D" parent="Grid/Collum4" unique_id=222964653]
+
+[node name="row5" type="CollisionPolygon2D" parent="Grid/Collum4/row5" unique_id=1550391627]
+position = Vector2(819, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row6" type="Area2D" parent="Grid/Collum4" unique_id=1907602517]
+
+[node name="row6" type="CollisionPolygon2D" parent="Grid/Collum4/row6" unique_id=2063105834]
+position = Vector2(959, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row7" type="Area2D" parent="Grid/Collum4" unique_id=1341953025]
+
+[node name="row7" type="CollisionPolygon2D" parent="Grid/Collum4/row7" unique_id=828882358]
+position = Vector2(1097, 257)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row8" type="Area2D" parent="Grid/Collum4" unique_id=1337959035]
+
+[node name="row8" type="CollisionPolygon2D" parent="Grid/Collum4/row8" unique_id=1402328668]
+position = Vector2(1238, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="Collum5" type="Node2D" parent="Grid" unique_id=248562489]
+visible = false
+position = Vector2(26, 563)
+
+[node name="row1" type="Area2D" parent="Grid/Collum5" unique_id=1107927309]
+
+[node name="row" type="CollisionPolygon2D" parent="Grid/Collum5/row1" unique_id=231067239]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row2" type="Area2D" parent="Grid/Collum5" unique_id=931557069]
+
+[node name="row2" type="CollisionPolygon2D" parent="Grid/Collum5/row2" unique_id=788928073]
+position = Vector2(397, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row3" type="Area2D" parent="Grid/Collum5" unique_id=44478339]
+
+[node name="row3" type="CollisionPolygon2D" parent="Grid/Collum5/row3" unique_id=1137470277]
+position = Vector2(539, 256)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row4" type="Area2D" parent="Grid/Collum5" unique_id=1623101075]
+
+[node name="row4" type="CollisionPolygon2D" parent="Grid/Collum5/row4" unique_id=438985403]
+position = Vector2(256, 257)
+polygon = PackedVector2Array(423, 2, 563, 3, 568, 142, 428, 142)
+
+[node name="row5" type="Area2D" parent="Grid/Collum5" unique_id=341165802]
+
+[node name="row5" type="CollisionPolygon2D" parent="Grid/Collum5/row5" unique_id=974655045]
+position = Vector2(819, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row6" type="Area2D" parent="Grid/Collum5" unique_id=1697803288]
+
+[node name="row6" type="CollisionPolygon2D" parent="Grid/Collum5/row6" unique_id=10253503]
+position = Vector2(959, 258)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row7" type="Area2D" parent="Grid/Collum5" unique_id=1809411041]
+
+[node name="row7" type="CollisionPolygon2D" parent="Grid/Collum5/row7" unique_id=143049254]
+position = Vector2(1097, 257)
+scale = Vector2(0.99999994, 0.99999994)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="row8" type="Area2D" parent="Grid/Collum5" unique_id=751725142]
+
+[node name="row8" type="CollisionPolygon2D" parent="Grid/Collum5/row8" unique_id=1585272522]
+position = Vector2(1238, 257)
+polygon = PackedVector2Array(0, 1, 140, 2, 145, 141, 5, 141)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Grid" unique_id=455596519]
+position = Vector2(261, 252)
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAHAAAAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_3qyon")
+rendering_quadrant_size = 128
+physics_quadrant_size = 128
+script = ExtResource("8_4ityq")
+
+[connection signal="mouse_entered" from="Grid/Collum1/row1" to="Grid" method="_on_area_2d_mouse_entered"]
