@@ -11,9 +11,9 @@ public partial class MainMenu : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		on_start_pressed(
-		gd.print("bingus")
-	);
+		//on_start_pressed(
+		GD.Print("bingus");
+
 	}
 	
 	

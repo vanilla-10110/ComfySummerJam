@@ -40,7 +40,7 @@ public partial class Building : Node
 	{
 		Node instance = projectile.Instantiate();
 		AddChild(instance);
-		instance.global
+		//instance.global
 		_attackTimer.Start();
 	}
 	private void FireLobbedProjectile(Node projectile, float distanceToTarget)
