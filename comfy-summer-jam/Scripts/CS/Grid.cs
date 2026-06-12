@@ -9,8 +9,13 @@ public partial class Grid : Node2D
 	private TileMapLayer _groundTileMapLayer;
 	private TileMapLayer _previewTileMapLayer;
 
+	private Vector2I _selectedTile;
+
 	private bool _selectMode = false;
 
+	private PackedScene _building = GD.Load<PackedScene>("res://Ranged_Building.tscn");
+	
+	
 	private Vector2I _previewTile;
 	public Vector2I PreviewTile 
 	{
@@ -20,15 +25,29 @@ public partial class Grid : Node2D
 				return;
 			_previewTileMapLayer.EraseCell(_previewTile);
 			_previewTile = value;
-			_previewTileMapLayer.SetCell(_previewTile);
+			_previewTileMapLayer.SetCell(value, 1, _selectedTile);
 		}
 	}
 
 	private int _gridSizeY = 5;
 	private int _gridSizeX = 8;
 	private Dictionary<string, string> Dic =  new Dictionary<string, string>();
-	
-	
+
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton mouseEvent)
+		{
+			if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
+			{
+				GD.Print($"Left Mouse Pressed at Position {mouseEvent.Position}");
+				LeftMouseClick();
+			}
+				
+		}
+		base._Input(@event);
+	}
+
+
 	public override void _Ready()
 	{
 		_groundTileMapLayer = GetNode<TileMapLayer>("ground");
@@ -58,11 +77,24 @@ public partial class Grid : Node2D
 		Vector2I[] workingSpace = _groundTileMapLayer.GetUsedCells().ToArray();
 		if (workingSpace.Contains(SnapPosition(GetGlobalMousePosition())))    
 		{
-			_previewTile = SnapPosition(GetGlobalMousePosition());
+			PreviewTile = SnapPosition(GetGlobalMousePosition());
 		}
 		else
 		{
 			_previewTileMapLayer.EraseCell(_previewTile);
 		}
 	}
+
+	private void LeftMouseClick()
+	{
+		Vector2I[] workingSpace = _previewTileMapLayer.GetUsedCells().ToArray();
+		Vector2I currentTile = SnapPosition(GetGlobalMousePosition());
+		if (workingSpace.Contains(currentTile))
+		{
+			var instance = _building.Instantiate();
+			AddChild(instance);
+		}
+	}
+	
+	
 }

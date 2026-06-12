@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cc7gax6778vvc"]
 
 [ext_resource type="Texture2D" uid="uid://cy7mlrbv6qb7o" path="res://Sprites/gun_placeholder.png" id="1_60y6h"]
-[ext_resource type="Script" uid="uid://dtxwsvcoo3blf" path="res://ranged_building.gd" id="1_l0kfc"]
+[ext_resource type="Script" uid="uid://dn4xku60ufow1" path="res://Scripts/CS/Building.cs" id="1_l0kfc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l0kfc"]
 size = Vector2(128, 128)
 
-[node name="Node2D" type="Node2D" unique_id=1051142709]
+[node name="Gun" type="Node2D" unique_id=1051142709]
 script = ExtResource("1_l0kfc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1218543742]
@@ -19,8 +19,12 @@ position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_l0kfc")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=797541864]
+visible = false
 target_position = Vector2(1045, -1)
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="Timer" type="Timer" parent="RayCast2D" unique_id=1634501897]
+[node name="AttackTimer" type="Timer" parent="RayCast2D" unique_id=1634501897]
+unique_name_in_owner = true
+wait_time = 0.5
+one_shot = true

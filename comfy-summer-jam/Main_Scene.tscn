@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cb0pfmr3rxqy7" path="res://Sprites/Beach.png" id="1_tkmsp"]
 [ext_resource type="Texture2D" uid="uid://jh2dwsylpymc" path="res://Sprites/Ocean.png" id="2_5yw3w"]
 [ext_resource type="Script" uid="uid://d2v5qvb47nbfk" path="res://Scripts/ocean.gd" id="3_qtktj"]
-[ext_resource type="Script" uid="uid://clmmgvrti8wny" path="res://Grid.cs" id="4_4ityq"]
+[ext_resource type="Script" uid="uid://clmmgvrti8wny" path="res://Scripts/CS/Grid.cs" id="4_4ityq"]
 [ext_resource type="Texture2D" uid="uid://o77hcnlyj0tr" path="res://Sprites/Grid.png" id="5_qtktj"]
 [ext_resource type="Texture2D" uid="uid://da8jwlmrda1oo" path="res://Sprites/Sprite-0002.png" id="6_lhke2"]
 [ext_resource type="Texture2D" uid="uid://n5ahsf28adnh" path="res://Sprites/tile_border.png" id="7_lhke2"]
@@ -53,16 +53,16 @@ texture = ExtResource("5_qtktj")
 
 [node name="ground" type="TileMapLayer" parent="Grid" unique_id=455596519]
 position = Vector2(261, 252)
+tile_map_data = PackedByteArray("AAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAGAAQAAAAAAAAAAAAFAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAADAAQAAAAAAAAAAAACAAQAAAAAAAAAAAABAAQAAAAAAAAAAAABAAMAAAAAAAAAAAABAAIAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAFAAMAAAAAAAAAAAAEAAMAAAAAAAAAAAADAAMAAAAAAAAAAAACAAMAAAAAAAAAAAACAAIAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_3qyon")
 rendering_quadrant_size = 128
 physics_quadrant_size = 128
 
 [node name="preview" type="TileMapLayer" parent="Grid" unique_id=259299044]
 position = Vector2(261, 252)
-tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAHAAAAAQAAAAAAAAAAAAQAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_3qyon")
 rendering_quadrant_size = 128
 physics_quadrant_size = 128
 
-[node name="Node2D" parent="." unique_id=1051142709 instance=ExtResource("8_4ityq")]
-position = Vector2(340, 907)
+[node name="Gun" parent="." unique_id=1051142709 instance=ExtResource("8_4ityq")]
+position = Vector2(331, 907)
